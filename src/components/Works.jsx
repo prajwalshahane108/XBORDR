@@ -82,7 +82,7 @@ export default function HowItWorks() {
   ];
 
   return (
-    <Box sx={{ py: 8, bgcolor: "#f8f9fa" }}>
+    <Box sx={{ py: 8, bgcolor: "#f3f3f3" }}>
       <Container maxWidth="lg">
         <Box sx={{ textAlign: "center", mb: 6 }}>
           <Typography

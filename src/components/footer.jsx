@@ -51,6 +51,7 @@ const GradientBackground = styled(Box)(({ animation }) => ({
 const StoreButton = styled(Link)(() => ({
   display: "inline-block",
   transition: "transform 0.2s ease-in-out",
+  textDecoration: "none", // Ensure no underline
   "&:hover": {
     transform: "scale(1.05)",
   },
@@ -59,6 +60,7 @@ const StoreButton = styled(Link)(() => ({
     width: "auto",
   },
 }));
+
 
 const FooterLink = styled(Link)(() => ({
   color: "rgba(0, 0, 0, 0.6)",
@@ -152,7 +154,8 @@ const AppHero = () => {
             fontWeight: "normal",
           }}
         >
-          Available on the iOS App Store and Google Play Store
+          Explore XBORDR today and experience seamless transactions, stability,
+          and security in the world of cryptocurrency.
         </Typography>
 
         <Box
@@ -164,25 +167,30 @@ const AppHero = () => {
             mb: 8,
           }}
         >
-          <StoreButton
-            sx={{
-              pt: 2,
-              pr: 5,
-              pl: 5,
-              pb: 1.5,
-              backgroundColor: "#ffffff",
-              borderRadius: "50px",
-            }}
-            href="#"
-            target="_blank"
-            rel="noopener"
-          >
-            <img
-              src="https://cdn.prod.website-files.com/62da6b5f754c761cc1b0de4b/62e02d6793b8ed9dffe43460_App%20Store.svg"
-              alt="Download on the App Store"
-            />
-          </StoreButton>
-          <StoreButton
+         <StoreButton
+  sx={{
+    pt: 2,
+    pr: 5,
+    pl: 5,
+    pb: 1.5,
+    backgroundColor: "#ffffff",
+    borderRadius: "50px",
+  }}
+>
+  <Typography
+    sx={{
+      fontSize: "1rem",
+      color: "#111213",
+      fontWeight: 600,
+      letterSpacing: "-0.02em",
+      textDecoration: "none", // Ensures no underline
+    }}
+  >
+    Learn More
+  </Typography>
+</StoreButton>
+
+          {/* <StoreButton
             sx={{
               pt: 2,
               pr: 5,
@@ -199,7 +207,7 @@ const AppHero = () => {
               src="https://cdn.prod.website-files.com/62da6b5f754c761cc1b0de4b/62e02d6615cfc41079ebc5a4_Google%20Play.svg"
               alt="Get it on Google Play"
             />
-          </StoreButton>
+          </StoreButton> */}
         </Box>
       </Container>
 

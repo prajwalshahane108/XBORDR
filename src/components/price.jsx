@@ -3,7 +3,7 @@ import { Download } from "lucide-react";
 
 export default function PricingPage() {
   return (
-    <Box sx={{ minHeight: "100vh", bgcolor: "#f8f9fa", py: 8 }}>
+    <Box sx={{ minHeight: "100vh", bgcolor: "#f3f3f3", py: 8 }}>
       <Container maxWidth="xl">
         {/* Header */}
         <Box sx={{ textAlign: "center", mb: 8 }}>
