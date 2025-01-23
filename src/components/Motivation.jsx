@@ -43,14 +43,14 @@ const moveBlur = keyframes`
 
 // Styled component for phone mockup
 const PhoneMockup = styled(Box)(({ theme }) => ({
-  width: "330px",
-  height: "700px",
+  width: "590px",
+  height: "400px",
   backgroundColor: "white",
-  backgroundImage: `url('https://cdn.prod.website-files.com/62da6b5f754c761cc1b0de4b/62de7b39f809514ec1dd7ac4_App%20C.svg')`,
+  backgroundImage: `url('')`,
   backgroundSize: "contain",
   backgroundPosition: "center",
   transform: "rotate(-10deg)",
-  borderRadius: "50px",
+  borderRadius: "20px",
   animation: `${bounce} 2s infinite`,
   position: "relative", // Necessary for the pseudo-element
   zIndex: 1, // Ensure the main element is above the blur
@@ -61,23 +61,23 @@ const PhoneMockup = styled(Box)(({ theme }) => ({
     position: "absolute",
     top: "0", // Position the blur behind the phone
     left: "0", // Align the blur to the left of the phone
-    width: "450px", // Starting size of the blur
-    height: "450px", // Starting size of the blur
+    width: "500px", // Starting size of the blur
+    height: "500px", // Starting size of the blur
     backgroundColor: "rgba(0, 122, 255, 0.6)", // Blue color with transparency
     filter: "blur(80px)", // Strong blur effect
     zIndex: 0, // Ensure it stays behind the phone mockup
     borderRadius: "50%", // Make it circular
-    animation: `${moveBlur} 10s infinite`, // Apply moving blur animation
+    animation: `${moveBlur} 20s infinite`, // Apply moving blur animation
   },
   "&::before": {
     content: '""',
     position: "absolute",
-    top: "0",
-    left: "0",
+    top: "0px",
+    left: "0px",
     width: "100%",
     height: "100%",
     backgroundImage:
-      "url('https://cdn.prod.website-files.com/62da6b5f754c761cc1b0de4b/62de7b39f809514ec1dd7ac4_App%20C.svg')",
+      "url('https://cdn.prod.website-files.com/63e626d88ff2d64582912f42/64c7fea471e2f5bb0f93b87c_payroll-step-3-p-800.png')",
     backgroundSize: "contain",
     backgroundPosition: "center",
     borderRadius: "50px",

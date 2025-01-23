@@ -5,7 +5,7 @@ import { CheckIcon } from "lucide-react";
 import { styled, keyframes } from "@mui/system";
 
 const GoalsSection = () => {
-    const bounce = keyframes`
+  const bounce = keyframes`
     0%, 100% {
       transform: translateY(-90px) rotate(10deg);
     }
@@ -22,17 +22,17 @@ const GoalsSection = () => {
       height: 150px;
     }
     25% {
-      transform: translateX(calc(30px * (2 * (Math.random() - 0.5)))) translateY(calc(30px * (2 * (Math.random() - 0.5))));
+      transform: translateX(calc(30px * (2 * (Math.random() - 0.5)))) translateY(calc(30px * (2 * (Math.random() - 0.5)))));
       width: 500px;
       height: 50px;
     }
     50% {
-      transform: translateX(calc(50px * (2 * (Math.random() - 0.5)))) translateY(calc(50px * (2 * (Math.random() - 0.5))));
+      transform: translateX(calc(50px * (2 * (Math.random() - 0.5)))) translateY(calc(50px * (2 * (Math.random() - 0.5)))));
       width: 60px;
       height: 650px;
     }
     75% {
-      transform: translateX(calc(40px * (2 * (Math.random() - 0.5)))) translateY(calc(40px * (2 * (Math.random() - 0.5))));
+      transform: translateX(calc(40px * (2 * (Math.random() - 0.5)))) translateY(calc(40px * (2 * (Math.random() - 0.5)))));
       width: 375px;
       height: 750px;
     }
@@ -44,18 +44,18 @@ const GoalsSection = () => {
   `;
   
   const PhoneMockup = styled(Box)(({ theme }) => ({
-    width: "330px",
-    height: "700px",
-    backgroundColor: "white",
-    backgroundImage: `url('https://www.colorcombos.com/images/colors/DEDEDE.png')`,
+    width: "580px",
+    height: "350px",
+    backgroundColor: "#f3f3f3",
+    backgroundImage: `url('https://cdn.prod.website-files.com/63e626d88ff2d64582912f42/64c7fea571e2f5bb0f93b9a9_payroll-step-4-p-500.png')`,
     backgroundSize: "contain",
     backgroundPosition: "center",
     transform: "rotate(-10deg)", // Rotated in the opposite direction
-    borderRadius: "50px",
+    borderRadius: "30px",
     animation: `${bounce} 10s infinite`,
     position: "relative", // Necessary for the pseudo-element
     zIndex: 1, // Ensure the main element is above the blur
-  
+
     // Position of the phone mockup itself remains unchanged
     "&::after": {
       content: '""',
@@ -67,7 +67,7 @@ const GoalsSection = () => {
       backgroundColor: "rgba(13, 209, 118, 0.6)", // Blue color with transparency
       filter: "blur(80px)", // Strong blur effect
       zIndex: 0, // Ensure it stays behind the phone mockup
-      borderRadius: "50%", // Make it circular
+      borderRadius: "50px", // Make it circular
       animation: `${moveBlur} 10s infinite`, // Apply moving blur animation
     },
     "&::before": {
@@ -78,10 +78,10 @@ const GoalsSection = () => {
       width: "100%",
       height: "100%",
       backgroundImage:
-        "url('https://cdn.prod.website-files.com/62da6b5f754c761cc1b0de4b/62de7b398b3d4ed5b1641686_App%20D.svg')",
+        "url('https://cdn.prod.website-files.com/63e626d88ff2d64582912f42/64c7fea571e2f5bb0f93b9a9_payroll-step-4-p-500.png')",
       backgroundSize: "contain",
       backgroundPosition: "center",
-      borderRadius: "50px",
+      borderRadius: "30px",
       zIndex: 2, // Place it above the blue background
     },
   }));
@@ -91,11 +91,9 @@ const GoalsSection = () => {
       sx={{
         minHeight: "100vh",
         display: "flex",
-        alignItems: "center",
-        justifyContent: "space-between",
         flexDirection: { xs: "column", md: "row" },
         bgcolor: "#f3f3f3",
-        p: { xs: 3, md: 16 },
+        p: { xs: 3, md: 8 },
         gap: { xs: 4, md: 8 },
         position: "relative",
         overflow: "hidden",
@@ -138,7 +136,7 @@ const GoalsSection = () => {
           sx={{
             color: "#666",
             mb: 4,
-            fontSize: "1.125rem",
+            fontSize: { xs: "1rem", md: "1.125rem" },
             lineHeight: 1.5,
           }}
         >
@@ -163,7 +161,7 @@ const GoalsSection = () => {
                 "Gain actionable recommendations based on your business’s unique requirements.",
             },
           ].map((item, index) => (
-            <Grid item xs={12} key={index}>
+            <Grid item xs={12} sm={6} key={index}>
               <Box sx={{ display: "flex", gap: 2 }}>
                 <Avatar
                   sx={{
@@ -206,12 +204,13 @@ const GoalsSection = () => {
       {/* Right Content - Phone Mockup */}
       <Box
         sx={{
-          flex: 1,
+          flex: -1,
           position: "relative",
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
           minHeight: { xs: "400px", md: "600px" },
+          pt: { xs: 4, md: 0 },
         }}
       >
         {/* Gradient Background */}
@@ -230,7 +229,6 @@ const GoalsSection = () => {
         {/* Phone Mockup */}
         <Box
           sx={{
-            pt:12,
             width: "100%",
             maxWidth: "300px",
             height: "auto",

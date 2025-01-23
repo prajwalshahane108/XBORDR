@@ -17,7 +17,7 @@ const HeroSection = () => {
     <Navbar/>
     <Box
       sx={{
-        minHeight: "85vh",
+        minHeight: { xs: "55vh", sm: "70vh", md: "85vh" },
         background: "#f3f3f3",
         display: "flex",
         flexDirection: "column",
@@ -56,8 +56,9 @@ const HeroSection = () => {
         </Box>
       </motion.div>
 
-      <Container maxWidth="md" sx={{ textAlign: "center" }}>
+      {/* <Container maxWidth="md" sx={{ textAlign: "center" }}> */}
         {/* Main Heading */}
+        <Box sx={{ textAlign: "center" }}>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -135,7 +136,8 @@ const HeroSection = () => {
             Download the App
           </Button>
         </motion.div>
-      </Container>
+      {/* </Container> */}
+    </Box>
     </Box>
     <Mobiles/>
     <Features/>
