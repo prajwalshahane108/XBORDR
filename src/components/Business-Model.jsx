@@ -1,9 +1,17 @@
-import React from "react"
-import { Box, Container, Typography, Grid, Card, CardMedia, CardContent } from "@mui/material"
-import { createTheme, ThemeProvider } from "@mui/material/styles"
-import palace from "../assets/palace.png"
-import haveli from "../assets/haveli.png"
-import Tower from "../assets/Tower.png"
+import React from "react";
+import {
+  Box,
+  Container,
+  Typography,
+  Grid,
+  Card,
+  CardMedia,
+  CardContent,
+} from "@mui/material";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+import palace from "../assets/palace.png";
+import haveli from "../assets/haveli.png";
+import Tower from "../assets/Tower.png";
 // Custom theme for the green color
 const theme = createTheme({
   palette: {
@@ -26,7 +34,7 @@ const theme = createTheme({
       fontWeight: 500,
     },
   },
-})
+});
 
 const businessItems = [
   {
@@ -44,14 +52,36 @@ const businessItems = [
     title: "FX Conversion",
     image: haveli, // Replace with Colosseum image
   },
-]
+];
 
 export default function BusinessModel() {
   return (
     <ThemeProvider theme={theme}>
       <Container maxWidth="lg" sx={{ py: 8 }}>
         {/* Heading */}
-        <Typography variant="h1" color="primary" gutterBottom sx={{ mb: 6 }}>
+        {/* <Typography
+          variant="h1"
+          fontWeight="bolder"
+          color="#000000"
+          gutterBottom
+          sx={{ mb: 6 }}
+        >
+          OUR BUSINESS MODEL
+        </Typography> */}
+        <Typography
+          variant="h2"
+          sx={{
+            fontSize: { xs: "1.8rem", md: "3rem" },
+            fontWeight: 800,
+            lineHeight: 1.2,
+            mb: 4,
+            mt: 2,
+            ml: 0, // No left margin
+            color: "#333",
+            textAlign: "center", // Centers the text horizontally
+            alignSelf: "center", // Centers the component within a flex container
+          }}
+        >
           OUR BUSINESS MODEL
         </Typography>
 
@@ -69,7 +99,12 @@ export default function BusinessModel() {
                 }}
               >
                 {/* Percentage */}
-                <Typography variant="h2" component="h2" align="center" sx={{ mb: 1 }}>
+                <Typography
+                  variant="h2"
+                  component="h2"
+                  align="center"
+                  sx={{ mb: 1 }}
+                >
                   {item.percentage}
                 </Typography>
 
@@ -96,6 +131,5 @@ export default function BusinessModel() {
         </Grid>
       </Container>
     </ThemeProvider>
-  )
+  );
 }
-

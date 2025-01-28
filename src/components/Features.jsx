@@ -5,21 +5,21 @@ export default function FeaturesSection() {
   const features = [
     {
       image:
-        "https://cdn.prod.website-files.com/62da6b5f754c761cc1b0de4b/62dec50bea309b2563330123_Feature%20Icon%201.svg",
+        "https://img.freepik.com/free-vector/pitch-meeting-concept-illustration_114360-6000.jpg?ga=GA1.1.1392755177.1731477850&semt=ais_hybrid",
       title: "Boost Your Business Efficiency",
       description:
         "A user-friendly interface that makes cross-border payments easy.",
     },
     {
       image:
-        "https://cdn.prod.website-files.com/62da6b5f754c761cc1b0de4b/62dec50b16ef6f77809beb58_Feature%20Icon%202.svg",
+        "https://img.freepik.com/free-vector/teem-discussing-project-kanban-board_1262-19963.jpg?ga=GA1.1.1392755177.1731477850&semt=ais_hybrid",
       title: "Seamless Integration",
       description:
         "Connects directly to existing business systems to ensure fast adoption.",
     },
     {
       image:
-        "https://cdn.prod.website-files.com/62da6b5f754c761cc1b0de4b/62dec50b66f64f294538b338_Feature%20Icon%203.svg",
+        "https://img.freepik.com/free-vector/indian-rupee-composition-with-flat-design_23-2147992019.jpg?ga=GA1.1.1392755177.1731477850&semt=ais_hybrid",
       title: "Real-time Currency Conversion",
       description:
         "Provides transparent and competitive foreign exchange rates.",
@@ -65,6 +65,7 @@ export default function FeaturesSection() {
               sx={{
                 fontSize: { xs: "2.5rem", md: "3.5rem" },
                 fontWeight: 800,
+                fontFamily: "Poppins, sans-serif",
                 mb: 2,
                 lineHeight: 1.2,
                 color: "#000",
@@ -125,6 +126,8 @@ export default function FeaturesSection() {
                     src={feature.image}
                     alt={feature.title}
                     sx={{
+                      borderRadius: "5%",
+                      fontFamily: "Poppins, sans-serif",
                       width: "180px", // Set a fixed width for the image
                       height: "150px", // Set a fixed height for the image
                       objectFit: "cover", // Ensures the image maintains its aspect ratio within the box

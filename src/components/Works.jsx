@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Container, Typography, Grid, Paper } from "@mui/material";
 import { styled } from "@mui/material/styles";
-import { motion } from "framer-motion"
+import { motion } from "framer-motion";
 
 // Styled components
 const StepNumber = styled(Box)(({ theme, color }) => ({
@@ -56,8 +56,7 @@ export default function HowItWorks() {
       number: "1",
       color: "#2196F3",
       title: "Start",
-      description:
-        "Businesses send payments using xBordr's Stablecoin.",
+      description: "Businesses send payments using xBordr's Stablecoin.",
       imageUrl:
         "https://cdn.prod.website-files.com/62da6b5f754c761cc1b0de4b/62dff0a517e347c1be7f1ee1_Step%201.svg", // Replace with your image URL
     },
@@ -99,7 +98,7 @@ export default function HowItWorks() {
           >
             Step by step
           </Typography>
-          <Typography
+          {/* <Typography
             component={motion.div}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -109,6 +108,22 @@ export default function HowItWorks() {
               fontSize: { xs: "2.5rem", md: "3.5rem" },
               fontWeight: "bold",
               color: "#1a1a1a",
+            }}
+          >
+            How xBordr Works
+          </Typography> */}
+          <Typography
+            variant="h2"
+            sx={{
+              fontSize: { xs: "1.8rem", md: "3rem" },
+              fontWeight: 800,
+              lineHeight: 1.2,
+              mb: 4,
+              mt: 2,
+              ml: 0, // No left margin
+              color: "#333",
+              textAlign: "center", // Centers the text horizontally
+              alignSelf: "center", // Centers the component within a flex container
             }}
           >
             How xBordr Works
@@ -130,7 +145,7 @@ export default function HowItWorks() {
                     }}
                   />
                 </ImageBox>
-                <StepNumber  color={step.color}>{step.number}</StepNumber>
+                <StepNumber color={step.color}>{step.number}</StepNumber>
               </StepCard>
               <Typography
                 variant="h5"

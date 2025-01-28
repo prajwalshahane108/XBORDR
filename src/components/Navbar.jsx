@@ -21,7 +21,7 @@ import Logo from "../assets/logo.png";
 const Hero = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
-  const menuItems = ["Home", "Features", "Pricing", "Blog", "Support"];
+  const menuItems = ["Home",];
 
   const [elevated, setElevated] = useState(false);
   const [drawerOpen, setDrawerOpen] = useState(false);

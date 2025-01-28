@@ -2,7 +2,7 @@ import React from "react";
 import { Box, Typography, Grid, Avatar } from "@mui/material";
 import { CheckIcon } from "lucide-react";
 import { styled, keyframes } from "@mui/system";
-
+import dynamic from "../assets/dynamic.png";
 const GoalsSection = () => {
   const bounce = keyframes`
     0%, 100% {
@@ -42,10 +42,10 @@ const GoalsSection = () => {
   `;
 
   const PhoneMockup = styled(Box)(({ theme }) => ({
-    width: "580px",
+    width: "480px",
     height: "350px",
     backgroundColor: "#f3f3f3",
-    backgroundImage: `url('https://cdn.prod.website-files.com/63e626d88ff2d64582912f42/64c7fea571e2f5bb0f93b9a9_payroll-step-4-p-500.png')`,
+    backgroundImage: `url(${dynamic})`,
     backgroundSize: "contain",
     backgroundPosition: "center",
     transform: "rotate(-10deg)", // Rotated in the opposite direction
@@ -53,7 +53,7 @@ const GoalsSection = () => {
     animation: `${bounce} 10s infinite`,
     position: "relative", // Necessary for the pseudo-element
     zIndex: 1, // Ensure the main element is above the blur
-  
+
     // Adjust size based on screen width
     [theme.breakpoints.down("md")]: {
       width: "480px",
@@ -67,20 +67,20 @@ const GoalsSection = () => {
       height: "400px",
       transform: "rotate(-5deg)", // Further adjust rotation
     },
-  
+
     "&::after": {
       content: '""',
       position: "absolute",
       top: "0", // Position the blur behind the phone
       left: "0", // Align the blur to the left of the phone
-      width: "450px", // Starting size of the blur
+      width: "350px", // Starting size of the blur
       height: "450px", // Starting size of the blur
       backgroundColor: "rgba(13, 209, 118, 0.6)", // Blue color with transparency
       filter: "blur(80px)", // Strong blur effect
       zIndex: 0, // Ensure it stays behind the phone mockup
       borderRadius: "50px", // Make it circular
       animation: `${moveBlur} 10s infinite`, // Apply moving blur animation
-  
+
       // Adjust blur and size dynamically
       [theme.breakpoints.down("md")]: {
         width: "350px",
@@ -93,7 +93,7 @@ const GoalsSection = () => {
         filter: "blur(40px)",
       },
     },
-  
+
     "&::before": {
       content: '""',
       position: "absolute",
@@ -102,7 +102,7 @@ const GoalsSection = () => {
       width: "100%",
       height: "100%",
       backgroundImage:
-        "url('https://cdn.prod.website-files.com/63e626d88ff2d64582912f42/64c7fea571e2f5bb0f93b9a9_payroll-step-4-p-500.png')",
+        `url(${dynamic})`,
       backgroundSize: "contain",
       backgroundPosition: "center",
       borderRadius: "30px",
@@ -113,7 +113,7 @@ const GoalsSection = () => {
   return (
     <Box
       sx={{
-        minHeight: "90vh",
+        minHeight: "70vh",
         display: "flex",
         flexDirection: { xs: "column", md: "row" },
         bgcolor: "#f3f3f3",
@@ -122,7 +122,13 @@ const GoalsSection = () => {
       }}
     >
       {/* Left Content */}
-      <Box sx={{ flex: 1, maxWidth: { xs: "100%", md: "50%" } }}>
+      <Box
+        sx={{
+          ml: { xs: 0, md: 2 },
+          flex: 1,
+          maxWidth: { xs: "100%", md: "50%" },
+        }}
+      >
         <Typography
           variant="h2"
           sx={{
@@ -131,7 +137,10 @@ const GoalsSection = () => {
             lineHeight: 1.2,
             mb: 4,
             mt: 2,
+            ml: 0, // No left margin
             color: "#333",
+            textAlign: "center", // Centers the text horizontally
+            alignSelf: "center", // Centers the component within a flex container
           }}
         >
           WHAT WE OFFER

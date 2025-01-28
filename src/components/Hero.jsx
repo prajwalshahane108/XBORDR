@@ -25,7 +25,7 @@ const HeroSection = () => {
       <Navbar />
       <Box
         sx={{
-          minHeight: { xs: "55vh", sm: "70vh", md: "85vh" },
+          minHeight: { xs: "25vh", sm: "30vh", md: "55vh" },
           background: "#f3f3f3",
           display: "flex",
           flexDirection: "column",
@@ -35,7 +35,7 @@ const HeroSection = () => {
         }}
       >
         {/* Top Banner */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -69,7 +69,7 @@ const HeroSection = () => {
               See what's new
             </Button>
           </Box>
-        </motion.div>
+        </motion.div> */}
 
         {/* <Container maxWidth="md" sx={{ textAlign: "center" }}> */}
         {/* Main Heading */}
@@ -161,16 +161,16 @@ const HeroSection = () => {
       <Mobiles />
       <Features />
       <Wallett/>
-      <CHALLENGE /> 
+      {/* <CHALLENGE />  */}
       <Works />
       <Goals />
-      <Motivation />
+      {/* <Motivation /> */}
       <BusinessModel/> 
-      <MOMENTUM/>
-      <Team/>
-      <Reviews />
-      <Landscape/>
-      <Funding/>
+      {/* <MOMENTUM/> */}
+      {/* <Team/> */}
+      {/* <Reviews /> */}
+      {/* <Landscape/> */}
+      {/* <Funding/> */}
       <Footer />
 
       {/* <Price /> */}

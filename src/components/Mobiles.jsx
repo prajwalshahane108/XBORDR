@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Box } from "@mui/material";
-
+import screenone from "../assets/screenone.png";
+import screentwo from "../assets/screentwo.png";
 const FloatingPhones = () => {
   const [isLoaded, setIsLoaded] = useState(false);
   useEffect(() => {
@@ -12,12 +13,13 @@ const FloatingPhones = () => {
       sx={{
         position: "relative",
         width: "100%",
-        height: "90vh",
+        // height: "150vh",
+        minHeight: { xs: "5vh", sm: "30vh", md: "70vh", lg: "85vh" },
+        mb: { xs: 8, sm: 20, md: 10 },
         background: "#f3f3f3",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        mb: 8,
         // overflow: "hidden",
       }}
     >
@@ -105,12 +107,12 @@ const FloatingPhones = () => {
                 width: "35px",
                 height: "10px",
                 background: "#f5f5f5",
-                borderRadius: "5px",
+                borderRadius: "1px",
                 zIndex: 10,
               }}
             />
             <img
-              src="https://cdn.prod.website-files.com/63e626d88ff2d64582912f42/64c8003a5a5e116129bb035f_img1-p-800.png"
+              src={screenone}
               alt="Phone A"
               style={{
                 width: "100%",
@@ -156,18 +158,18 @@ const FloatingPhones = () => {
                 width: "35px",
                 height: "10px",
                 background: "#f5f5f5",
-                borderRadius: "5px",
+                borderRadius: "1px",
                 zIndex: 20,
               }}
             />
             <img
-              src="https://cdn.prod.website-files.com/63e626d88ff2d64582912f42/64c7fea4f21a24d65730ca2c_payroll-step-2-p-800.png"
+              src={screentwo}
               alt="Phone B"
               style={{
                 width: "100%",
                 height: "auto",
                 maxWidth: "500px",
-                borderRadius: "42px",
+                borderRadius: "30px",
               }}
             />
           </Box>

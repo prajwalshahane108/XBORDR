@@ -61,7 +61,6 @@ const StoreButton = styled(Link)(() => ({
   },
 }));
 
-
 const FooterLink = styled(Link)(() => ({
   color: "rgba(0, 0, 0, 0.6)",
   textDecoration: "none",
@@ -74,15 +73,16 @@ const FooterLink = styled(Link)(() => ({
 const AppHero = () => {
   return (
     <Box
-      sx={{
-        bgcolor: "#f3f3f3",
-        position: "relative",
-        minHeight: "130vh",
-        overflow: "hidden",
-        display: "flex",
-        flexDirection: "column",
-      }}
-    >
+  sx={{
+    bgcolor: "#f3f3f3",
+    position: "relative",
+    minHeight: { xs: "100vh", sm: "50vh" , md: "80vh", lg: "70vh" }, // Full height on small screens, reduced height on larger screens
+    overflow: "hidden",
+    display: "flex",
+    flexDirection: "column",
+    padding: { xs: 2, md: 4, lg: 6 }, // Add responsive padding
+  }}
+>
       {/* Animated background gradients */}
       <GradientBackground
         sx={{ background: "#aaeaf8", bottom: "-9%", left: "20%" }}
@@ -167,28 +167,28 @@ const AppHero = () => {
             mb: 8,
           }}
         >
-         <StoreButton
-  sx={{
-    pt: 2,
-    pr: 5,
-    pl: 5,
-    pb: 1.5,
-    backgroundColor: "#ffffff",
-    borderRadius: "50px",
-  }}
->
-  <Typography
-    sx={{
-      fontSize: "1rem",
-      color: "#111213",
-      fontWeight: 600,
-      letterSpacing: "-0.02em",
-      textDecoration: "none", // Ensures no underline
-    }}
-  >
-    Learn More
-  </Typography>
-</StoreButton>
+          <StoreButton
+            sx={{
+              pt: 2,
+              pr: 5,
+              pl: 5,
+              pb: 1.5,
+              backgroundColor: "#ffffff",
+              borderRadius: "50px",
+            }}
+          >
+            <Typography
+              sx={{
+                fontSize: "1rem",
+                color: "#111213",
+                fontWeight: 600,
+                letterSpacing: "-0.02em",
+                textDecoration: "none", // Ensures no underline
+              }}
+            >
+              Learn More
+            </Typography>
+          </StoreButton>
 
           {/* <StoreButton
             sx={{
@@ -213,7 +213,7 @@ const AppHero = () => {
 
       <Box
         sx={{
-          py: 3,
+          // py: 3,
           position: "relative",
           zIndex: 1,
         }}
@@ -228,7 +228,7 @@ const AppHero = () => {
               flexWrap: "wrap",
             }}
           >
-            <FooterLink href="#">Powered by DSHG SONIC</FooterLink>
+            {/* <FooterLink href="#">Powered by DSHG SONIC</FooterLink> */}
             {/* <FooterLink href="#">Made by </FooterLink> */}
             {/* <FooterLink href="#">Licensing</FooterLink>
             <FooterLink href="#">Style Guide</FooterLink>
