@@ -12,12 +12,13 @@ const FloatingPhones = () => {
       sx={{
         position: "relative",
         width: "100%",
-        height: "150vh",
+        height: "90vh",
         background: "#f3f3f3",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        overflow: "hidden",
+        mb: 8,
+        // overflow: "hidden",
       }}
     >
       {/* Gradient Background Blobs */}

@@ -79,7 +79,7 @@ export default function PricingPage() {
                 <ListItem sx={{ px: 0, opacity: 0.9 }}>• Ideal for small businesses.</ListItem>
                 <ListItem sx={{ px: 0, opacity: 0.9 }}>• Features: Basic transaction capabilities with real-time currency conversion.</ListItem>
               </List>
-              <Button
+              {/* <Button
                 variant="contained"
                 startIcon={<Download size={18} />}
                 sx={{
@@ -95,7 +95,7 @@ export default function PricingPage() {
                 }}
               >
                 Download
-              </Button>
+              </Button> */}
             </CardContent>
           </Card>
 
@@ -135,7 +135,7 @@ export default function PricingPage() {
                 <ListItem sx={{ px: 0, opacity: 0.9 }}>• API access for integrating xBordr directly into your website</ListItem>
                 <ListItem sx={{ px: 0, opacity: 0.9 }}>• Plug-and-play integration with popular e-commerce platforms like Shopify, WooCommerce, etc.</ListItem>
               </List>
-              <Button
+              {/* <Button
                 variant="contained"
                 sx={{
                   px: 4,
@@ -150,7 +150,7 @@ export default function PricingPage() {
                 }}
               >
                 Choose Plan
-              </Button>
+              </Button> */}
             </CardContent>
           </Card>
         </Box>
