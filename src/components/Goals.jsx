@@ -129,7 +129,7 @@ const GoalsSection = () => {
     // textTransform: "uppercase",
   }}
 >
-  WHY CHOOSE{" "}
+  Why choose{" "}
   <span style={{ color: "#0077B3" }}>xBordr</span> {/* Change color here */}
 </Typography>
 
