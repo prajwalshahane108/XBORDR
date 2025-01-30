@@ -112,22 +112,24 @@ export default function HowItWorks() {
           >
             How xBordr Works
           </Typography> */}
-          <Typography
-            variant="h2"
-            sx={{
-              fontSize: { xs: "1.8rem", md: "3rem" },
-              fontWeight: "bold",
-              lineHeight: 1.2,
-              mb: 4,
-              mt: 2,
-              ml: 0, // No left margin
-              color: "#000000", // Default color for the rest of the text
-              textAlign: "center", // Centers the text horizontally
-              alignSelf: "center", // Centers the component within a flex container
-            }}
-          >
-            How <span style={{ color: "#0077B3" }}>xBordr</span> Works
-          </Typography>
+         <Typography
+  variant="h2"
+  sx={{
+    fontSize: { xs: "1.8rem", md: "3rem" },
+    fontWeight: "bold",
+    lineHeight: 1.2,
+    mb: 4,
+    mt: 2,
+    ml: 0, // No left margin
+    color: "#000000", // Default color for the rest of the text
+    textAlign: "center", // Centers the text horizontally
+    alignSelf: "center", // Centers the component within a flex container
+    fontFamily: "Montserrat, sans-serif", // Set Montserrat font
+  }}
+>
+  How <span style={{ color: "#0077B3" }}>xBordr</span> Works
+</Typography>
+
         </Box>
 
         <Grid container spacing={2}>

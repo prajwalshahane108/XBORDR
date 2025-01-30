@@ -466,7 +466,8 @@ const AppHero = () => {
             lineHeight: 1.1,
             letterSpacing: "-0.02em",
             color: "#111213",
-            fontFamily: "montserrat",
+            fontFamily: "Montserrat, sans-serif", // Set Montserrat font
+
           }}
         >
           Join our pre-launch waitlist!

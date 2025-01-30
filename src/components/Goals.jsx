@@ -127,6 +127,7 @@ const GoalsSection = () => {
     textAlign: "center",
     color: "#000000", // Black color for the main text
     // textTransform: "uppercase",
+    fontFamily: "Montserrat, sans-serif", // Set Montserrat font
   }}
 >
   Why choose{" "}

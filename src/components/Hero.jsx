@@ -101,7 +101,8 @@ const HeroSection = () => {
                   WebkitBackgroundClip: "text",
                   color: "transparent",
                   display: "inline-block",
-                  fontFamily: "montserrat",
+                  fontFamily: "Montserrat, sans-serif", // Set Montserrat font
+
                   fontWeight: "bold",
                 }}
               >

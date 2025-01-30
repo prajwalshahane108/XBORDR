@@ -64,7 +64,7 @@ export default function FeaturesSection() {
               sx={{
                 fontSize: { xs: "2.5rem", md: "3.5rem" },
                 fontWeight: "bold",
-                fontFamily: "montserrat",
+                fontFamily: "Montserrat, sans-serif", // Set Montserrat font
                 mb: 2,
                 lineHeight: 1.2,
                 color: "#000",
