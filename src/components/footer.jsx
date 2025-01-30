@@ -1,8 +1,14 @@
 import React from "react";
 import { Box, Container, Typography, Link } from "@mui/material";
 import { styled, keyframes } from "@mui/material/styles";
-import Logo from "../assets/logo.png";
-// Keyframes for moving and resizing
+import QRCode from "react-qr-code"; // Import QRCode
+import {
+  FaFacebook,
+  FaTwitter,
+  FaInstagram,
+  FaLinkedin,
+  FaTiktok,
+} from "react-icons/fa";
 const moveAndResize1 = keyframes`
   0% { transform: translate(-20%, 0) scale(1); }
   50% { transform: translate(10%, -20%) scale(1.3); }
@@ -33,7 +39,6 @@ const moveAndResize5 = keyframes`
   100% { transform: translate(20%, -20%) scale(1); }
 `;
 
-// Styled components for gradient effects with animations
 const GradientBackground = styled(Box)(({ animation }) => ({
   position: "absolute",
   bottom: 0,
@@ -73,16 +78,16 @@ const FooterLink = styled(Link)(() => ({
 const AppHero = () => {
   return (
     <Box
-  sx={{
-    bgcolor: "#f3f3f3",
-    position: "relative",
-    minHeight: { xs: "100vh", sm: "50vh" , md: "80vh", lg: "70vh" }, // Full height on small screens, reduced height on larger screens
-    overflow: "hidden",
-    display: "flex",
-    flexDirection: "column",
-    padding: { xs: 2, md: 4, lg: 6 }, // Add responsive padding
-  }}
->
+      sx={{
+        bgcolor: "#f3f3f3",
+        position: "relative",
+        minHeight: { xs: "100vh", sm: "50vh", md: "80vh", lg: "70vh" }, // Full height on small screens, reduced height on larger screens
+        overflow: "hidden",
+        display: "flex",
+        flexDirection: "column",
+        padding: { xs: 2, md: 4, lg: 1 }, // Add responsive padding
+      }}
+    >
       {/* Animated background gradients */}
       <GradientBackground
         sx={{ background: "#aaeaf8", bottom: "-9%", left: "20%" }}
@@ -114,16 +119,18 @@ const AppHero = () => {
           alignItems: "center",
           justifyContent: "center",
           textAlign: "center",
-          py: 8,
+          py: 1,
           position: "relative",
           zIndex: 1,
         }}
       >
         <Box
           component="img"
-          src={Logo}
+          src="https://images.unsplash.com/photo-1504326787394-e6d75cae8027?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
           alt="Welike Logo"
           sx={{
+            borderRadius: "50%",
+            objectFit: "cover",
             width: "125px",
             height: "125px",
             mb: 4,
@@ -132,17 +139,17 @@ const AppHero = () => {
 
         <Typography
           sx={{
-            fontSize: { xs: "2.5rem", md: "5.2rem" },
-            fontWeight: 600,
+            fontSize: { xs: "2.5rem", md: "4.2rem" },
+            fontWeight: "bold",
             mb: 4.5,
             maxWidth: "900px",
             lineHeight: 1.1,
             letterSpacing: "-0.02em",
-            color: "#111213",
-            fontFamily: "plus jakarta sans,",
+            color: "#111213", // Default color for the rest of the text
+            fontFamily: "montserrat",
           }}
         >
-          The XBORDR is now available
+          Join our pre-launch waitlist!
         </Typography>
 
         <Typography
@@ -154,9 +161,14 @@ const AppHero = () => {
             fontWeight: "normal",
           }}
         >
-          Explore XBORDR today and experience seamless transactions, stability,
-          and security in the world of cryptocurrency.
+          Join our waitlist and be the first to save money and time on your
+          tourism cross-border payments!
         </Typography>
+
+        {/* QR Code Section */}
+        <Box sx={{ display: "flex", justifyContent: "center", mb: 6 }}>
+          <QRCode value="https://forms.gle/Y9BF3W8auqinFF5b9" size={128} />
+        </Box>
 
         <Box
           sx={{
@@ -177,64 +189,125 @@ const AppHero = () => {
               borderRadius: "50px",
             }}
           >
-            <Typography
-              sx={{
-                fontSize: "1rem",
-                color: "#111213",
-                fontWeight: 600,
-                letterSpacing: "-0.02em",
-                textDecoration: "none", // Ensures no underline
-              }}
+            <a
+              href="https://forms.gle/Y9BF3W8auqinFF5b9"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ textDecoration: "none" }}
             >
-              Learn More
-            </Typography>
+              <Typography
+                sx={{
+                  fontSize: "1rem",
+                  color: "#111213",
+                  fontWeight: 600,
+                  letterSpacing: "-0.02em",
+                  textDecoration: "none", // Ensures no underline
+                }}
+              >
+                Join our waitlist…
+              </Typography>
+            </a>
           </StoreButton>
-
-          {/* <StoreButton
-            sx={{
-              pt: 2,
-              pr: 5,
-              pl: 5,
-              pb: 1.5,
-              backgroundColor: "#ffffff",
-              borderRadius: "50px",
-            }}
-            href="#"
-            target="_blank"
-            rel="noopener"
-          >
-            <img
-              src="https://cdn.prod.website-files.com/62da6b5f754c761cc1b0de4b/62e02d6615cfc41079ebc5a4_Google%20Play.svg"
-              alt="Get it on Google Play"
-            />
-          </StoreButton> */}
         </Box>
       </Container>
 
-      <Box
-        sx={{
-          // py: 3,
-          position: "relative",
-          zIndex: 1,
-        }}
-      >
+      <Box sx={{ position: "relative", zIndex: 1 }}>
         <Container maxWidth="lg">
           <Box
             sx={{
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
-              gap: { xs: 2, md: 4 },
+              gap: { xs: 2, md: 6 },
               flexWrap: "wrap",
             }}
           >
-            {/* <FooterLink href="#">Powered by DSHG SONIC</FooterLink> */}
-            {/* <FooterLink href="#">Made by </FooterLink> */}
-            {/* <FooterLink href="#">Licensing</FooterLink>
-            <FooterLink href="#">Style Guide</FooterLink>
-            <FooterLink href="#">Changelog</FooterLink> */}
+            {/* Social Media Links with Icons */}
+            <FooterLink
+              href="https://www.facebook.com/xBordr"
+              target="_blank"
+              sx={{
+                color: "#3b5998",
+                fontSize: "1.2rem",
+                display: "flex",
+                flexDirection: "column", // Align icon above text
+                alignItems: "center", // Center-align items
+              }}
+            >
+              <FaFacebook size={34} />
+              Facebook
+            </FooterLink>
+            <FooterLink
+              href="https://x.com/xbordrapp"
+              target="_blank"
+              sx={{
+                color: "#1DA1F2",
+                fontSize: "1.2rem",
+                display: "flex",
+                flexDirection: "column", // Align icon above text
+                alignItems: "center", // Center-align items
+              }}
+            >
+              <FaTwitter size={34} />X
+            </FooterLink>
+            <FooterLink
+              href="https://www.instagram.com/xbordr"
+              target="_blank"
+              sx={{
+                color: "#e4405f",
+                fontSize: "1.2rem",
+                display: "flex",
+                flexDirection: "column", // Align icon above text
+                alignItems: "center", // Center-align items
+              }}
+            >
+              <FaInstagram size={34} />
+              Instagram
+            </FooterLink>
+            <FooterLink
+              href="https://www.linkedin.com/company/xbordr"
+              target="_blank"
+              sx={{
+                fontSize: "1.2rem",
+                color: "#0077b5",
+                display: "flex",
+                flexDirection: "column", // Align icon above text
+                alignItems: "center", // Center-align items
+              }}
+            >
+              <FaLinkedin size={34} />
+              LinkedIn
+            </FooterLink>
+
+            <FooterLink
+              href="https://www.tiktok.com/@xbordrapp"
+              target="_blank"
+              sx={{
+                fontSize: "1.2rem",
+
+                color: "#000000",
+                display: "flex",
+                flexDirection: "column", // Align icon above text
+                alignItems: "center", // Center-align items
+              }}
+            >
+              <FaTiktok size={34} />
+              TikTok
+            </FooterLink>
           </Box>
+
+          {/* Copyright Notice */}
         </Container>
+        <Typography
+          sx={{
+            mt: 8,
+            textAlign: "center",
+            color: "rgba(0, 0, 0, 0.6)",
+            fontSize: "0.875rem",
+          }}
+        >
+          All rights reserved. Copyright xBordr, Inc. {new Date().getFullYear()}
+        </Typography>
       </Box>
     </Box>
   );

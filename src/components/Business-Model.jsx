@@ -72,12 +72,12 @@ export default function BusinessModel() {
           variant="h2"
           sx={{
             fontSize: { xs: "1.8rem", md: "3rem" },
-            fontWeight: 800,
+            fontWeight: "bold",
             lineHeight: 1.2,
             mb: 4,
             mt: 2,
             ml: 0, // No left margin
-            color: "#333",
+            color: "#000000",
             textAlign: "center", // Centers the text horizontally
             alignSelf: "center", // Centers the component within a flex container
           }}
@@ -103,7 +103,7 @@ export default function BusinessModel() {
                   variant="h2"
                   component="h2"
                   align="center"
-                  sx={{ mb: 1 }}
+                  sx={{ mb: 1, color: "#4CAF50",  }}
                 >
                   {item.percentage}
                 </Typography>

@@ -1,224 +1,128 @@
-import React, { useEffect, useState } from "react";
-import { Box } from "@mui/material";
-import screenone from "../assets/screenone.png";
-import screentwo from "../assets/screentwo.png";
-const FloatingPhones = () => {
-  const [isLoaded, setIsLoaded] = useState(false);
-  useEffect(() => {
-    setIsLoaded(true);
-  }, []);
+  import { useEffect, useState } from "react";
+  import { Box } from "@mui/material";
+  import { keyframes } from "@mui/system";
+  import screenone from "../assets/screenone.png";
 
-  return (
-    <Box
-      sx={{
-        position: "relative",
-        width: "100%",
-        // height: "150vh",
-        minHeight: { xs: "5vh", sm: "30vh", md: "70vh", lg: "85vh" },
-        mb: { xs: 8, sm: 20, md: 10 },
-        background: "#f3f3f3",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        // overflow: "hidden",
-      }}
-    >
-      {/* Gradient Background Blobs */}
-      <Box
-        sx={{
-          position: "absolute",
-          inset: 0,
-        }}
-      >
-        {/* Pink Blob */}
-        <Box
-          sx={{
-            position: "absolute",
-            width: { xs: 200, sm: 300, md: 400 }, // Responsive size
-            height: { xs: 200, sm: 300, md: 400 }, // Responsive size
-            borderRadius: "50%",
-            filter: "blur(100px)",
-            opacity: 1,
-            background: "linear-gradient(135deg, #FF69B4 0%, #FF1493 100%)",
-            animation: "movePink 6s ease-in-out infinite",
-            top: { xs: "10%", md: "20%" },
-            left: { xs: "15%", md: "30%" },
-          }}
-        />
-        {/* Orange Blob */}
-        <Box
-          sx={{
-            position: "absolute",
-            width: { xs: 200, sm: 300, md: 400 }, // Responsive size
-            height: { xs: 200, sm: 300, md: 400 }, // Responsive size
-            borderRadius: "50%",
-            filter: "blur(100px)",
-            opacity: 1,
-            background: "linear-gradient(135deg, #FFA500 0%, #FF8C00 100%)",
-            animation: "moveOrange 3s ease-in-out infinite",
-            top: { xs: "50%", md: "40%" },
-            right: { xs: "10%", md: "20%" },
-          }}
-        />
-      </Box>
+  // Define animations
+  const float = keyframes`
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  `;
 
-      {/* Phones Container */}
+  const movePink = keyframes`
+    0%, 100% {
+      top: 20%;
+      left: 30%;
+    }
+    50% {
+      top: 35%;
+      left: 19%;
+    }
+  `;
+
+  const moveOrange = keyframes`
+    0%, 100% {
+      top: 50%;
+      right: 10%;
+    }
+    50% {
+      top: 35%;
+      right: 9%;
+    }
+  `;
+
+  const CenteredPhone = () => {
+    const [isLoaded, setIsLoaded] = useState(false);
+
+    useEffect(() => {
+      setIsLoaded(true);
+    }, []);
+
+    return (
       <Box
         sx={{
           position: "relative",
+          width: "100%",
+          minHeight: { xs: "50vh", sm: "70vh", md: "70vh", lg: "60vh" },
+          mb: { xs: 8, sm: 10, md: 12 },
+          mt: { xs: 8, sm: 20, md: 12 },
+          background: "#f3f3f3",
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          flexDirection: { xs: "column", md: "row" }, // Stack on smaller screens
-          gap: { xs: "40px", md: "-60px" }, // Adjust gap for responsiveness
-          width: "100%",
-          maxWidth: "1200px",
         }}
       >
-        {/* Left Phone */}
+        {/* Gradient Background Blobs */}
+        <Box sx={{ position: "absolute", inset: 0 }}>
+          {/* Pink Blob */}
+          <Box
+            sx={{
+              position: "absolute",
+              width: { xs: 200, sm: 300, md: 400 },
+              height: { xs: 200, sm: 300, md: 400 },
+              borderRadius: "50%",
+              filter: "blur(100px)",
+              opacity: 0.7,
+              background: "linear-gradient(135deg, #FF69B4 0%, #FF1493 100%)",
+              animation: `${movePink} 6s ease-in-out infinite`,
+              top: { xs: "10%", md: "20%" },
+              left: { xs: "15%", md: "30%" },
+            }}
+          />
+          {/* Orange Blob */}
+          <Box
+            sx={{
+              position: "absolute",
+              width: { xs: 200, sm: 300, md: 400 },
+              height: { xs: 200, sm: 300, md: 400 },
+              borderRadius: "50%",
+              filter: "blur(100px)",
+              opacity: 0.7,
+              background: "linear-gradient(135deg, #FFA500 0%, #FF8C00 100%)",
+              animation: `${moveOrange} 6s ease-in-out infinite`,
+              top: { xs: "50%", md: "40%" },
+              right: { xs: "10%", md: "20%" },
+            }}
+          />
+        </Box>
+
+        {/* Centered Phone */}
         <Box
           sx={{
             position: "relative",
             zIndex: 10,
             transition: "opacity 1s ease-out, transform 1s ease-out",
             opacity: isLoaded ? 1 : 0,
-            transform: isLoaded
-              ? "translateY(20px) rotate(-9deg)"
-              : "translateY(50px) rotate(-15deg)",
-            width: { xs: "550px", sm: "300px", md: "520px" }, // Responsive width
+            transform: isLoaded ? "translateY(0)" : "translateY(30px)",
+            width: { xs: "90%", sm: "70%", md: "50%", lg: "40%" }, // Increased size
+            maxWidth: "600px", // Increased max width
+            transform: "rotate(1deg)", // Tilt image
+            animation: `${float} 3s ease-in-out infinite`,
+
           }}
         >
-          <Box
-            sx={{
-              position: "relative",
-              background: "#fff",
-              borderRadius: "40px",
-              boxShadow: "0 10px 30px rgba(0,0,0,0.2)",
-              padding: "10px",
-              animation: "float1 6s ease-in-out infinite",
-            }}
-          >
-            <Box
-              sx={{
-                position: "absolute",
-                top: "12px",
-                left: "50%",
-                transform: "translateX(-50%)",
-                width: "35px",
-                height: "10px",
-                background: "#f5f5f5",
-                borderRadius: "1px",
-                zIndex: 10,
-              }}
-            />
+          
             <img
-              src={screenone}
-              alt="Phone A"
+              src="https://images.unsplash.com/photo-1530521954074-e64f6810b32d?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt="Phone"
               style={{
+                border: " 10px solid #ffffff",
+                boxShadow: "0 10px 30px rgba(0,0,0,0.4)",
                 width: "100%",
                 height: "auto",
-                maxWidth: "520px",
                 borderRadius: "32px",
                 display: "block",
                 objectFit: "contain",
+                transform: "rotate(-15deg) scale(1.1)", // Rotate and increase size
               }}
             />
-          </Box>
-        </Box>
-
-        {/* Right Phone */}
-        <Box
-          sx={{
-            position: "relative",
-            zIndex: 20,
-            transition: "opacity 1s ease-out, transform 1s ease-out",
-            opacity: isLoaded ? 1 : 0,
-            transform: isLoaded
-              ? "translateY(90px) rotate(8deg)"
-              : "translateY(30px) rotate(5deg)",
-            width: { xs: "550px", sm: "300px", md: "500px" }, // Responsive width
-          }}
-        >
-          <Box
-            sx={{
-              position: "relative",
-              background: "#fff",
-              borderRadius: "40px",
-              boxShadow: "0 10px 30px rgba(0,0,0,0.2)",
-              padding: "10px",
-              animation: "float2 6s ease-in-out infinite",
-            }}
-          >
-            <Box
-              sx={{
-                position: "absolute",
-                top: "12px",
-                left: "50%",
-                transform: "translateX(-10%)",
-                width: "35px",
-                height: "10px",
-                background: "#f5f5f5",
-                borderRadius: "1px",
-                zIndex: 20,
-              }}
-            />
-            <img
-              src={screentwo}
-              alt="Phone B"
-              style={{
-                width: "100%",
-                height: "auto",
-                maxWidth: "500px",
-                borderRadius: "30px",
-              }}
-            />
-          </Box>
         </Box>
       </Box>
+    );
+  };
 
-      {/* Keyframes */}
-      <style>
-        {`
-          @keyframes float1 {
-            0%, 100% {
-              transform: translateY(0) rotate(0deg);
-            }
-            50% {
-              transform: translateY(-10px) rotate(0deg);
-            }
-          }
-          @keyframes float2 {
-            0%, 100% {
-              transform: translateY(0) rotate(5deg);
-            }
-            50% {
-              transform: translateY(-10px) rotate(5deg);
-            }
-          }
-          @keyframes movePink {
-            0%, 100% {
-              top: 20%;
-              left: 30%;
-            }
-            50% {
-              top: 35%;
-              left: 19%;
-            }
-          }
-          @keyframes moveOrange {
-            0%, 100% {
-              top: 50%;
-              right: 10%;
-            }
-            50% {
-              top: 35%;
-              right: 9%;
-            }
-          }
-        `}
-      </style>
-    </Box>
-  );
-};
-
-export default FloatingPhones;
+  export default CenteredPhone;

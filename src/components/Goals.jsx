@@ -3,6 +3,7 @@ import { Box, Typography, Grid, Avatar } from "@mui/material";
 import { CheckIcon } from "lucide-react";
 import { styled, keyframes } from "@mui/system";
 import dynamic from "../assets/dynamic.png";
+
 const GoalsSection = () => {
   const bounce = keyframes`
     0%, 100% {
@@ -45,43 +46,38 @@ const GoalsSection = () => {
     width: "480px",
     height: "350px",
     backgroundColor: "#f3f3f3",
-    backgroundImage: `url(${dynamic})`,
+    backgroundImage: `url("https://images.unsplash.com/photo-1519338381761-c7523edc1f46?q=80&w=1577&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")`,
+
     backgroundSize: "contain",
     backgroundPosition: "center",
-    transform: "rotate(-10deg)", // Rotated in the opposite direction
+    transform: "rotate(-10deg)",
     borderRadius: "30px",
     animation: `${bounce} 10s infinite`,
-    position: "relative", // Necessary for the pseudo-element
-    zIndex: 1, // Ensure the main element is above the blur
-
-    // Adjust size based on screen width
+    position: "relative",
+    zIndex: 1,
     [theme.breakpoints.down("md")]: {
       width: "480px",
       height: "280px",
-      transform: "rotate(-8deg)", // Slightly adjust rotation
+      transform: "rotate(-8deg)",
     },
     [theme.breakpoints.down("sm")]: {
       marginTop: "100px",
-      marginBottom: "100px",
-      width: "620px",
+      width: "560px",
       height: "400px",
-      transform: "rotate(-5deg)", // Further adjust rotation
+      transform: "rotate(-5deg)",
     },
-
     "&::after": {
       content: '""',
       position: "absolute",
-      top: "0", // Position the blur behind the phone
-      left: "0", // Align the blur to the left of the phone
-      width: "350px", // Starting size of the blur
-      height: "450px", // Starting size of the blur
-      backgroundColor: "rgba(13, 209, 118, 0.6)", // Blue color with transparency
-      filter: "blur(80px)", // Strong blur effect
-      zIndex: 0, // Ensure it stays behind the phone mockup
-      borderRadius: "50px", // Make it circular
-      animation: `${moveBlur} 10s infinite`, // Apply moving blur animation
-
-      // Adjust blur and size dynamically
+      top: "0",
+      left: "0",
+      width: "350px",
+      height: "450px",
+      backgroundColor: "rgba(13, 209, 118, 0.6)",
+      filter: "blur(80px)",
+      zIndex: 0,
+      borderRadius: "50px",
+      animation: `${moveBlur} 10s infinite`,
       [theme.breakpoints.down("md")]: {
         width: "350px",
         height: "350px",
@@ -93,7 +89,6 @@ const GoalsSection = () => {
         filter: "blur(40px)",
       },
     },
-
     "&::before": {
       content: '""',
       position: "absolute",
@@ -101,131 +96,148 @@ const GoalsSection = () => {
       left: "0",
       width: "100%",
       height: "100%",
-      backgroundImage:
-        `url(${dynamic})`,
-      backgroundSize: "contain",
+      backgroundImage: `url("https://images.unsplash.com/photo-1519338381761-c7523edc1f46?q=80&w=1577&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")`,
+
+      backgroundSize: "cover",
       backgroundPosition: "center",
       borderRadius: "30px",
-      zIndex: 2, // Place it above the blue background
+      zIndex: 2,
     },
   }));
 
   return (
     <Box
       sx={{
-        minHeight: "70vh",
+        minHeight: { xs: "50vh", sm: "60vh", md: "70vh", lg: "80vh" },
         display: "flex",
-        flexDirection: { xs: "column", md: "row" },
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
         bgcolor: "#f3f3f3",
         p: { xs: 3, md: 8 },
         gap: { xs: 4, md: 8 },
       }}
     >
-      {/* Left Content */}
+      {/* Centered Header */}
+      <Typography
+  variant="h1"
+  sx={{
+    fontSize: { xs: "2rem", md: "3rem" },
+    fontWeight: "bold",
+    textAlign: "center",
+    color: "#000000", // Black color for the main text
+    // textTransform: "uppercase",
+  }}
+>
+  WHY CHOOSE{" "}
+  <span style={{ color: "#0077B3" }}>xBordr</span> {/* Change color here */}
+</Typography>
+
+
       <Box
         sx={{
-          ml: { xs: 0, md: 2 },
-          flex: 1,
-          maxWidth: { xs: "100%", md: "50%" },
+          display: "flex",
+          flexDirection: { xs: "column", md: "row" },
+          alignItems: "center",
+          gap: { xs: 4, md: 10 },
+          width: "100%",
         }}
       >
-        <Typography
-          variant="h2"
+        {/* Left Content */}
+        <Box
           sx={{
-            fontSize: { xs: "1.8rem", md: "3rem" },
-            fontWeight: 800,
-            lineHeight: 1.2,
-            mb: 4,
-            mt: 2,
-            ml: 0, // No left margin
-            color: "#333",
-            textAlign: "center", // Centers the text horizontally
-            alignSelf: "center", // Centers the component within a flex container
+            flex: 1,
+            maxWidth: { xs: "100%", md: "50%" },
+            justifyContent: "center ",
+            alignItems: "flex-start",
           }}
         >
-          WHAT WE OFFER
-        </Typography>
-
-        <Grid container spacing={2}>
-          {[
-            {
-              title: "Dynamic Currency Conversion",
-              description:
-                "Real-time, transparent & competitive foreign exchange rates.",
-            },
-            {
-              title: "Multilingual Support",
-              description:
-                "Catering to the diverse needs of tourism businesses.",
-            },
-            {
-              title: "Seamless Integration",
-              description:
-                "Easy API integration with travel platforms like Amadeus.",
-            },
-            {
-              title: "Data Analytics",
-              description:
-                "Insights into spending patterns for informed decision-making.",
-            },
-            {
-              title: "Enhanced Security",
-              description:
-                "Blockchain technology and multi-factor authentication for reduced risk of fraud and chargebacks.",
-            },
-          ].map((item, index) => (
-            <Grid item xs={12} sm={6} key={index}>
-              <Box sx={{ display: "flex", gap: 2 }}>
-                <Avatar
-                  sx={{
-                    p: 1,
-                    fontWeight: 800,
-                    bgcolor: "#fff",
-                    color: "#000",
-                    width: 32,
-                    height: 32,
-                  }}
-                >
-                  <CheckIcon size={18} />
-                </Avatar>
-                <Box>
-                  <Typography
+          <Grid
+            container
+            spacing={2}
+            sx={{ justifyContent: "center ", alignItems: "flex-start" }}
+          >
+            {[
+              {
+                title: "Dynamic Currency Conversion",
+                description:
+                  "Real-time, transparent & competitive foreign exchange rates.",
+              },
+              {
+                title: "Multilingual Support",
+                description:
+                  "Catering to the diverse needs of tourism businesses.",
+              },
+              {
+                title: "Seamless Integration",
+                description:
+                  "Easy API integration with tourism payments software.",
+              },
+              {
+                title: "Data Analytics",
+                description:
+                  "Insights into spending patterns for informed decision-making.",
+              },
+              {
+                title: "Enhanced Security",
+                description:
+                  "Blockchain technology and multi-factor authentication for reduced risk of fraud and chargebacks.",
+              },
+            ].map((item, index) => (
+              <Grid item xs={12} sm={6} key={index} sx={{ mb: 2 }}>
+                <Box sx={{ display: "flex", gap: 2 }}>
+                  <Avatar
                     sx={{
-                      fontWeight: 600,
-                      mb: 1,
-                      fontSize: "1rem",
-                      color: "#333",
+                      p: 1,
+                      fontWeight: 800,
+                      bgcolor: "#fff",
+                      color: "#000",
+                      width: 32,
+                      height: 32,
                     }}
                   >
-                    {item.title}
-                  </Typography>
-                  <Typography
-                    sx={{
-                      color: "#666",
-                      lineHeight: 1.6,
-                      fontSize: "0.875rem",
-                    }}
-                  >
-                    {item.description}
-                  </Typography>
+                    <CheckIcon size={18} />
+                  </Avatar>
+                  <Box>
+                    <Typography
+                      sx={{
+                        fontWeight: 600,
+                        mb: 1,
+                        fontSize: "1rem",
+                        color: "#333",
+                      }}
+                    >
+                      {item.title}
+                    </Typography>
+                    <Typography
+                      sx={{
+                        color: "#666",
+                        lineHeight: 1.6,
+                        fontSize: "0.875rem",
+                      }}
+                    >
+                      {item.description}
+                    </Typography>
+                  </Box>
                 </Box>
-              </Box>
-            </Grid>
-          ))}
-        </Grid>
-      </Box>
+              </Grid>
+            ))}
+          </Grid>
+        </Box>
 
-      {/* Right Content - Phone Mockup */}
-      <Box
-        sx={{
-          flex: 1,
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          minHeight: { xs: "300px", md: "400px" },
-        }}
-      >
-        <PhoneMockup />
+        {/* Right Content - Phone Mockup */}
+        <Box
+          sx={{
+            flex: 1,
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            minHeight: { xs: "300px", md: "200px" },
+            marginTop: { xs: 0, md: 15 },
+          }}
+        >
+          <PhoneMockup />
+        </Box>
       </Box>
     </Box>
   );

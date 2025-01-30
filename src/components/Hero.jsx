@@ -25,8 +25,12 @@ const HeroSection = () => {
       <Navbar />
       <Box
         sx={{
-          minHeight: { xs: "25vh", sm: "30vh", md: "55vh" },
-          background: "#f3f3f3",
+          minHeight: { xs: "25vh", sm: "30vh", md: "85vh" },
+          background: "#f3f3f3", // Default background color
+          // backgroundImage: "url('https://images.unsplash.com/photo-1530521954074-e64f6810b32d?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')", // Add your image path here
+          backgroundSize: "cover", // Ensure the image covers the entire container
+          backgroundPosition: "center", // Center the image
+          backgroundRepeat: "no-repeat", // Prevent the image from repeating
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
@@ -83,7 +87,7 @@ const HeroSection = () => {
               variant="h1"
               sx={{
                 fontSize: { xs: "2.5rem", md: "4.9rem" },
-                fontWeight: 600,
+                fontWeight: "bold",
                 lineHeight: 1.2,
                 color: "#000",
                 mb: 2,
@@ -92,20 +96,23 @@ const HeroSection = () => {
               <Box
                 component="span"
                 sx={{
-                  background:
-                    "linear-gradient(90deg, #FFB74D 0%, #FF8A65 100%)",
+                  background: "#0077B3",
                   backgroundClip: "text",
                   WebkitBackgroundClip: "text",
                   color: "transparent",
                   display: "inline-block",
+                  fontFamily: "montserrat",
+                  fontWeight: "bold",
                 }}
               >
-                XBORDR
+                xBordr
               </Box>
               <br />
-              Tourism Cross-Border 
+              simplifies cross-border
               <br />
-              Payments Simplified{" "}
+              payments
+              <br />
+              for tourism businesses.{" "}
             </Typography>
           </motion.div>
 
@@ -115,7 +122,7 @@ const HeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            <Typography
+            {/* <Typography
               variant="h5"
               sx={{
                 color: "text.secondary",
@@ -125,7 +132,7 @@ const HeroSection = () => {
             >
               Experience the ease of seamless, secure cross-border transactions
               for travelers worldwide.
-            </Typography>
+            </Typography> */}
           </motion.div>
 
           {/* Download Button */}
@@ -160,12 +167,12 @@ const HeroSection = () => {
       {/* <Wallet/> */}
       <Mobiles />
       <Features />
-      <Wallett/>
+      {/* <Wallett/> */}
       {/* <CHALLENGE />  */}
       <Works />
       <Goals />
       {/* <Motivation /> */}
-      <BusinessModel/> 
+      {/* <BusinessModel/>  */}
       {/* <MOMENTUM/> */}
       {/* <Team/> */}
       {/* <Reviews /> */}
