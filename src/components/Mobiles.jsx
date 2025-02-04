@@ -42,53 +42,57 @@
       setIsLoaded(true);
     }, []);
 
-    return (
+  return (
+    <Box
+      sx={{
+        position: "relative",
+        width: "100%",
+        height: "150vh",
+        background: "#f3f3f3",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        overflow: "hidden",
+      }}
+    >
+      {/* Gradient Background Blobs */}
       <Box
         sx={{
-          position: "relative",
-          width: "100%",
-          minHeight: { xs: "50vh", sm: "70vh", md: "70vh", lg: "60vh" },
-          mb: { xs: 8, sm: 10, md: 12 },
-          mt: { xs: 8, sm: 20, md: 12 },
-          background: "#f3f3f3",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
+          position: "absolute",
+          inset: 0,
         }}
       >
-        {/* Gradient Background Blobs */}
-        <Box sx={{ position: "absolute", inset: 0 }}>
-          {/* Pink Blob */}
-          <Box
-            sx={{
-              position: "absolute",
-              width: { xs: 200, sm: 300, md: 400 },
-              height: { xs: 200, sm: 300, md: 400 },
-              borderRadius: "50%",
-              filter: "blur(100px)",
-              opacity: 0.7,
-              background: "linear-gradient(135deg, #FF69B4 0%, #FF1493 100%)",
-              animation: `${movePink} 6s ease-in-out infinite`,
-              top: { xs: "10%", md: "20%" },
-              left: { xs: "15%", md: "30%" },
-            }}
-          />
-          {/* Orange Blob */}
-          <Box
-            sx={{
-              position: "absolute",
-              width: { xs: 200, sm: 300, md: 400 },
-              height: { xs: 200, sm: 300, md: 400 },
-              borderRadius: "50%",
-              filter: "blur(100px)",
-              opacity: 0.7,
-              background: "linear-gradient(135deg, #FFA500 0%, #FF8C00 100%)",
-              animation: `${moveOrange} 6s ease-in-out infinite`,
-              top: { xs: "50%", md: "40%" },
-              right: { xs: "10%", md: "20%" },
-            }}
-          />
-        </Box>
+        {/* Pink Blob */}
+        <Box
+          sx={{
+            position: "absolute",
+            width: { xs: 200, sm: 300, md: 400 }, // Responsive size
+            height: { xs: 200, sm: 300, md: 400 }, // Responsive size
+            borderRadius: "50%",
+            filter: "blur(100px)",
+            opacity: 1,
+            background: "linear-gradient(135deg, #FF69B4 0%, #FF1493 100%)",
+            animation: "movePink 6s ease-in-out infinite",
+            top: { xs: "10%", md: "20%" },
+            left: { xs: "15%", md: "30%" },
+          }}
+        />
+        {/* Orange Blob */}
+        <Box
+          sx={{
+            position: "absolute",
+            width: { xs: 200, sm: 300, md: 400 }, // Responsive size
+            height: { xs: 200, sm: 300, md: 400 }, // Responsive size
+            borderRadius: "50%",
+            filter: "blur(100px)",
+            opacity: 1,
+            background: "linear-gradient(135deg, #FFA500 0%, #FF8C00 100%)",
+            animation: "moveOrange 3s ease-in-out infinite",
+            top: { xs: "50%", md: "40%" },
+            right: { xs: "10%", md: "20%" },
+          }}
+        />
+      </Box>
 
         {/* Centered Phone */}
         <Box

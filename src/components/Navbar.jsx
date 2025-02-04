@@ -110,7 +110,7 @@ const Hero = () => {
                 ))}
 
                 {/* Download Button */}
-                {/* <Button
+                <Button
                   variant="contained"
                   endIcon={<Download size={20}/>} // Add this line for the download icon
                   sx={{
@@ -128,7 +128,7 @@ const Hero = () => {
                   }}
                 >
                   Download
-                </Button> */}
+                </Button>
               </Box>
             )}
 
@@ -181,7 +181,7 @@ const Hero = () => {
               </ListItem>
             ))}
           </List>
-          {/* <Button
+          <Button
             variant="contained"
             fullWidth
             sx={{
@@ -201,7 +201,7 @@ const Hero = () => {
             }}
           >
             Download
-          </Button> */}
+          </Button>
         </Box>
       </Drawer>
     </>

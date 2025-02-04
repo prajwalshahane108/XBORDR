@@ -35,7 +35,7 @@ export default function FeaturesSection() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            {/* <Typography
+            <Typography
               component="span"
               sx={{
                 bgcolor: "#FF440F26",
@@ -50,7 +50,7 @@ export default function FeaturesSection() {
               }}
             >
               Benefits
-            </Typography> */}
+            </Typography>
           </motion.div>
 
           <motion.div
@@ -97,10 +97,12 @@ export default function FeaturesSection() {
               color="text.secondary"
               sx={{ fontSize: "1.125rem", maxWidth: "650px", mx: "auto" }}
             >
-              xBordr is revolutionizing cross-border payments in the tourism
-              industry. <br /> We leverage Stablecoin, pegged in value to the US
-              Dollar, to reduce transaction costs and processing times, ensuring
-              a seamless experience for businesses.
+              XBORDR is revolutionizing cross-border payments in the tourism
+              industry. By leveraging Stablecoin, pegged in value to the US
+              Dollar, we are able to drastically reduce transaction costs and
+              processing times. This enables businesses to provide a seamless
+              payment experience for their customers, making international
+              transactions as easy and fast as local ones.
             </Typography>
           </motion.div>
         </Box>
