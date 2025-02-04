@@ -4,7 +4,7 @@ import PlayCircleIcon from "@mui/icons-material/PlayCircle"
 
 import { createTheme, ThemeProvider } from "@mui/material/styles"
 
-// Custom theme to match the xBordr orange color
+// Custom theme to match the XBORDR orange color
 const theme = createTheme({
   palette: {
     primary: {
@@ -59,7 +59,7 @@ export default function BitcoinLanding() {
               lineHeight: 1.2,
             }}
           >
-            xBordr is an innovative payment network and a new kind of money.
+            XBORDR is an innovative payment network and a new kind of money.
           </Typography>
 
           {/* Buttons container */}
@@ -80,7 +80,7 @@ export default function BitcoinLanding() {
                 color: "white",
               }}
             >
-              Get started with xBordr
+              Get started with XBORDR
             </Button>
             <Button
               variant="outlined"
@@ -98,7 +98,7 @@ export default function BitcoinLanding() {
                 minWidth: "200px",
               }}
             >
-              Buy xBordr
+              Buy XBORDR
             </Button>
           </Box>
 
@@ -126,7 +126,7 @@ export default function BitcoinLanding() {
                 fontSize: "1.1rem",
               }}
             >
-              What is xBordr?
+              What is XBORDR?
             </Typography>
           </Box>
         </Box>
@@ -134,5 +134,4 @@ export default function BitcoinLanding() {
     </ThemeProvider>
   )
 }
-
 

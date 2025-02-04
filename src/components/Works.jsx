@@ -54,37 +54,37 @@ export default function HowItWorks() {
   const steps = [
     {
       number: "1",
-      color: "#0077B3",
+      color: "#2196F3",
       title: "Start",
-      description: "Integrate our API into your tourism payments software or use our web platform.",
+      description: "Businesses send payments using xBordr's Stablecoin.",
       imageUrl:
         "https://cdn.prod.website-files.com/62da6b5f754c761cc1b0de4b/62dff0a517e347c1be7f1ee1_Step%201.svg", // Replace with your image URL
     },
     {
       number: "2",
-      color: "#FF5722",
+      color: "#FF9800",
       title: "Process",
       description:
-        "Input payor & payee banking information, the amount to send and click send. We’ll automatically convert your fiat currency to stablecoin.",
+        "Payments are securely processed on the blockchain, reducing costs and time.",
       imageUrl:
         "https://cdn.prod.website-files.com/62da6b5f754c761cc1b0de4b/62dff0a6bca70858f1525cb4_Step%202.svg", // Replace with your image URL
     },
     {
       number: "3",
-      color: "#4CAF50",
+      color: "#FF4081",
       title: "Complete",
       description:
-        "Confirm within minutes on your dashboard that the payee received the funds.",
+        "The recipient receives funds in their wallet, with minimal fees and no exchange rate fluctuations.",
       imageUrl:
         "https://cdn.prod.website-files.com/62da6b5f754c761cc1b0de4b/62dff0a6bf672a53929dc82e_Step%203.svg", // Replace with your image URL
     },
   ];
 
   return (
-    <Box sx={{ py: 8, bgcolor: "#f8f9fa" }}>
+    <Box sx={{ py: 8, bgcolor: "#f3f3f3" }}>
       <Container maxWidth="lg">
         <Box sx={{ textAlign: "center", mb: 6 }}>
-          {/* <Typography
+          <Typography
             component={motion.div}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -97,7 +97,7 @@ export default function HowItWorks() {
             }}
           >
             Step by step
-          </Typography> */}
+          </Typography>
           {/* <Typography
             component={motion.div}
             initial={{ opacity: 0, y: 20 }}
@@ -112,24 +112,22 @@ export default function HowItWorks() {
           >
             How xBordr Works
           </Typography> */}
-         <Typography
-  variant="h2"
-  sx={{
-    fontSize: { xs: "1.8rem", md: "3rem" },
-    fontWeight: "bold",
-    lineHeight: 1.2,
-    mb: 4,
-    mt: 2,
-    ml: 0, // No left margin
-    color: "#000000", // Default color for the rest of the text
-    textAlign: "center", // Centers the text horizontally
-    alignSelf: "center", // Centers the component within a flex container
-    fontFamily: "Montserrat, sans-serif", // Set Montserrat font
-  }}
->
-  How <span style={{ color: "#0077B3" }}>xBordr</span> Works
-</Typography>
-
+          <Typography
+            variant="h2"
+            sx={{
+              fontSize: { xs: "1.8rem", md: "3rem" },
+              fontWeight: 800,
+              lineHeight: 1.2,
+              mb: 4,
+              mt: 2,
+              ml: 0, // No left margin
+              color: "#333",
+              textAlign: "center", // Centers the text horizontally
+              alignSelf: "center", // Centers the component within a flex container
+            }}
+          >
+            How xBordr Works
+          </Typography>
         </Box>
 
         <Grid container spacing={2}>
@@ -178,4 +176,3 @@ export default function HowItWorks() {
     </Box>
   );
 }
-

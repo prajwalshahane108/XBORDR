@@ -1,10 +1,8 @@
 import React from "react";
 import { Box, Typography, Grid, Avatar } from "@mui/material";
-// import CheckIcon from '@mui/icons-material/Check';
 import { CheckIcon } from "lucide-react";
 import { styled, keyframes } from "@mui/system";
 import dynamic from "../assets/dynamic.png";
-
 const GoalsSection = () => {
   const bounce = keyframes`
     0%, 100% {
@@ -14,8 +12,7 @@ const GoalsSection = () => {
       transform: translateY(-30px) rotate(10deg);
     }
   `;
-  
-  // Animation for the moving and expanding blur background
+
   const moveBlur = keyframes`
     0% {
       transform: translateX(10) translateY(0);
@@ -23,55 +20,80 @@ const GoalsSection = () => {
       height: 150px;
     }
     25% {
-      transform: translateX(calc(30px * (2 * (Math.random() - 0.5)))) translateY(calc(30px * (2 * (Math.random() - 0.5)))));
-      width: 500px;
-      height: 50px;
+      transform: translateX(30px) translateY(30px);
+      width: 300px;
+      height: 300px;
     }
     50% {
-      transform: translateX(calc(50px * (2 * (Math.random() - 0.5)))) translateY(calc(50px * (2 * (Math.random() - 0.5)))));
-      width: 60px;
-      height: 650px;
+      transform: translateX(-30px) translateY(-30px);
+      width: 400px;
+      height: 400px;
     }
     75% {
-      transform: translateX(calc(40px * (2 * (Math.random() - 0.5)))) translateY(calc(40px * (2 * (Math.random() - 0.5)))));
-      width: 375px;
-      height: 750px;
+      transform: translateX(20px) translateY(20px);
+      width: 250px;
+      height: 250px;
     }
     100% {
-      transform: translateX(-10) translateY(0);
-      width: 450px;
+      transform: translateX(-10px) translateY(0);
+      width: 150px;
       height: 150px;
     }
   `;
-  
+
   const PhoneMockup = styled(Box)(({ theme }) => ({
     width: "480px",
     height: "350px",
     backgroundColor: "#f3f3f3",
-    backgroundImage: `url("https://images.unsplash.com/photo-1519338381761-c7523edc1f46?q=80&w=1577&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")`,
-
+    backgroundImage: `url(${dynamic})`,
     backgroundSize: "contain",
     backgroundPosition: "center",
-    transform: "rotate(-10deg)",
+    transform: "rotate(-10deg)", // Rotated in the opposite direction
     borderRadius: "30px",
     animation: `${bounce} 10s infinite`,
     position: "relative", // Necessary for the pseudo-element
     zIndex: 1, // Ensure the main element is above the blur
 
-    // Position of the phone mockup itself remains unchanged
+    // Adjust size based on screen width
+    [theme.breakpoints.down("md")]: {
+      width: "480px",
+      height: "280px",
+      transform: "rotate(-8deg)", // Slightly adjust rotation
+    },
+    [theme.breakpoints.down("sm")]: {
+      marginTop: "100px",
+      marginBottom: "100px",
+      width: "620px",
+      height: "400px",
+      transform: "rotate(-5deg)", // Further adjust rotation
+    },
+
     "&::after": {
       content: '""',
       position: "absolute",
       top: "0", // Position the blur behind the phone
       left: "0", // Align the blur to the left of the phone
-      width: "450px", // Starting size of the blur
+      width: "350px", // Starting size of the blur
       height: "450px", // Starting size of the blur
       backgroundColor: "rgba(13, 209, 118, 0.6)", // Blue color with transparency
       filter: "blur(80px)", // Strong blur effect
       zIndex: 0, // Ensure it stays behind the phone mockup
       borderRadius: "50px", // Make it circular
       animation: `${moveBlur} 10s infinite`, // Apply moving blur animation
+
+      // Adjust blur and size dynamically
+      [theme.breakpoints.down("md")]: {
+        width: "350px",
+        height: "350px",
+        filter: "blur(60px)",
+      },
+      [theme.breakpoints.down("sm")]: {
+        width: "250px",
+        height: "250px",
+        filter: "blur(40px)",
+      },
     },
+
     "&::before": {
       content: '""',
       position: "absolute",
@@ -79,90 +101,77 @@ const GoalsSection = () => {
       left: "0",
       width: "100%",
       height: "100%",
-      backgroundImage: `url("https://images.unsplash.com/photo-1519338381761-c7523edc1f46?q=80&w=1577&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")`,
-
-      backgroundSize: "cover",
+      backgroundImage:
+        `url(${dynamic})`,
+      backgroundSize: "contain",
       backgroundPosition: "center",
       borderRadius: "30px",
-      zIndex: 2,
+      zIndex: 2, // Place it above the blue background
     },
   }));
-  
+
   return (
     <Box
       sx={{
-        minHeight: "100vh",
+        minHeight: "70vh",
         display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
+        flexDirection: { xs: "column", md: "row" },
         bgcolor: "#f3f3f3",
         p: { xs: 3, md: 8 },
         gap: { xs: 4, md: 8 },
-        position: "relative",
-        overflow: "hidden",
       }}
     >
       {/* Left Content */}
-      <Box sx={{ flex: 1, maxWidth: { xs: "100%", md: "50%" } }}>
-        <Typography
-          component="span"
-          sx={{
-            bgcolor: "#E6F7F5",
-            color: "#40BAB2",
-            fontSize: "0.875rem",
-            fontWeight: 600,
-            py: 0.5,
-            px: 1.5,
-            borderRadius: 1,
-            mb: 2,
-            display: "inline-block",
-          }}
-        >
-          Goals
-        </Typography>
-
+      <Box
+        sx={{
+          ml: { xs: 0, md: 2 },
+          flex: 1,
+          maxWidth: { xs: "100%", md: "50%" },
+        }}
+      >
         <Typography
           variant="h2"
           sx={{
-            fontSize: { xs: "2rem", md: "3.5rem" },
+            fontSize: { xs: "1.8rem", md: "3rem" },
             fontWeight: 800,
             lineHeight: 1.2,
-            mb: 2,
-            mt: 2,
-            color: "#333",
-          }}
-        >
-          Helps You Set Personalized Goals
-        </Typography>
-
-        <Typography
-          sx={{
-            color: "#666",
             mb: 4,
-            fontSize: { xs: "1rem", md: "1.125rem" },
-            lineHeight: 1.5,
+            mt: 2,
+            ml: 0, // No left margin
+            color: "#333",
+            textAlign: "center", // Centers the text horizontally
+            alignSelf: "center", // Centers the component within a flex container
           }}
         >
-          xBordr enables businesses to define clear, actionable objectives tailored to their needs. By using our platform, you can streamline your priorities and achieve measurable outcomes efficiently.
+          WHAT WE OFFER
         </Typography>
 
-        <Grid container spacing={3}>
+        <Grid container spacing={2}>
           {[
             {
-              title: "Customizable Financial Targets",
+              title: "Dynamic Currency Conversion",
               description:
-                "Set goals for reducing transaction costs and processing times.",
+                "Real-time, transparent & competitive foreign exchange rates.",
             },
             {
-              title: "Enhanced Decision-Making",
+              title: "Multilingual Support",
               description:
-                "Use detailed analytics to adjust your strategies and achieve success.",
+                "Catering to the diverse needs of tourism businesses.",
             },
             {
-              title: "Personalized Insights",
+              title: "Seamless Integration",
               description:
-                "Gain actionable recommendations based on your business’s unique requirements.",
+                "Easy API integration with travel platforms like Amadeus.",
+            },
+            {
+              title: "Data Analytics",
+              description:
+                "Insights into spending patterns for informed decision-making.",
+            },
+            {
+              title: "Enhanced Security",
+              description:
+                "Blockchain technology and multi-factor authentication for reduced risk of fraud and chargebacks.",
             },
           ].map((item, index) => (
             <Grid item xs={12} sm={6} key={index}>
@@ -173,18 +182,18 @@ const GoalsSection = () => {
                     fontWeight: 800,
                     bgcolor: "#fff",
                     color: "#000",
-                    width: 20,
-                    height: 20,
+                    width: 32,
+                    height: 32,
                   }}
                 >
-                  <CheckIcon sx={{ fontSize: 16 }} />
+                  <CheckIcon size={18} />
                 </Avatar>
                 <Box>
                   <Typography
                     sx={{
                       fontWeight: 600,
                       mb: 1,
-                      fontSize: "1.125rem",
+                      fontSize: "1rem",
                       color: "#333",
                     }}
                   >
@@ -194,6 +203,7 @@ const GoalsSection = () => {
                     sx={{
                       color: "#666",
                       lineHeight: 1.6,
+                      fontSize: "0.875rem",
                     }}
                   >
                     {item.description}
@@ -208,44 +218,17 @@ const GoalsSection = () => {
       {/* Right Content - Phone Mockup */}
       <Box
         sx={{
-          flex: -1,
-          position: "relative",
+          flex: 1,
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          minHeight: { xs: "400px", md: "600px" },
-          pt: { xs: 4, md: 0 },
+          minHeight: { xs: "300px", md: "400px" },
         }}
       >
-        {/* Gradient Background */}
-        <Box
-          sx={{
-            position: "absolute",
-            width: "100%",
-            height: "100%",
-            background:
-              "radial-gradient(circle at 50% 50%, rgba(64, 186, 178, 0.2) 0%, rgba(255, 255, 255, 0) 70%)",
-            filter: "blur(40px)",
-            transform: "scale(1.5)",
-          }}
-        />
-
-        {/* Phone Mockup */}
-        <Box
-          sx={{
-            width: "100%",
-            maxWidth: "300px",
-            height: "auto",
-            position: "relative",
-            zIndex: 1,
-          }}
-        >
-          <PhoneMockup />
-        </Box>
+        <PhoneMockup />
       </Box>
     </Box>
   );
 };
 
 export default GoalsSection;
-

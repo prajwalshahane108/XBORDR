@@ -1,58 +1,26 @@
-  import { useEffect, useState } from "react";
-  import { Box } from "@mui/material";
-  import { keyframes } from "@mui/system";
-  import screenone from "../assets/screenone.png";
-
-  // Define animations
-  const float = keyframes`
-    0%, 100% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-10px);
-    }
-  `;
-
-  const movePink = keyframes`
-    0%, 100% {
-      top: 20%;
-      left: 30%;
-    }
-    50% {
-      top: 35%;
-      left: 19%;
-    }
-  `;
-
-  const moveOrange = keyframes`
-    0%, 100% {
-      top: 50%;
-      right: 10%;
-    }
-    50% {
-      top: 35%;
-      right: 9%;
-    }
-  `;
-
-  const CenteredPhone = () => {
-    const [isLoaded, setIsLoaded] = useState(false);
-
-    useEffect(() => {
-      setIsLoaded(true);
-    }, []);
+import React, { useEffect, useState } from "react";
+import { Box } from "@mui/material";
+import screenone from "../assets/screenone.png";
+import screentwo from "../assets/screentwo.png";
+const FloatingPhones = () => {
+  const [isLoaded, setIsLoaded] = useState(false);
+  useEffect(() => {
+    setIsLoaded(true);
+  }, []);
 
   return (
     <Box
       sx={{
         position: "relative",
         width: "100%",
-        height: "150vh",
+        // height: "150vh",
+        minHeight: { xs: "5vh", sm: "30vh", md: "70vh", lg: "85vh" },
+        mb: { xs: 8, sm: 20, md: 10 },
         background: "#f3f3f3",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        overflow: "hidden",
+        // overflow: "hidden",
       }}
     >
       {/* Gradient Background Blobs */}
@@ -94,40 +62,163 @@
         />
       </Box>
 
-        {/* Centered Phone */}
+      {/* Phones Container */}
+      <Box
+        sx={{
+          position: "relative",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          flexDirection: { xs: "column", md: "row" }, // Stack on smaller screens
+          gap: { xs: "40px", md: "-60px" }, // Adjust gap for responsiveness
+          width: "100%",
+          maxWidth: "1200px",
+        }}
+      >
+        {/* Left Phone */}
         <Box
           sx={{
             position: "relative",
             zIndex: 10,
             transition: "opacity 1s ease-out, transform 1s ease-out",
             opacity: isLoaded ? 1 : 0,
-            transform: isLoaded ? "translateY(0)" : "translateY(30px)",
-            width: { xs: "90%", sm: "70%", md: "50%", lg: "40%" }, // Increased size
-            maxWidth: "600px", // Increased max width
-            transform: "rotate(1deg)", // Tilt image
-            animation: `${float} 3s ease-in-out infinite`,
-
+            transform: isLoaded
+              ? "translateY(20px) rotate(-9deg)"
+              : "translateY(50px) rotate(-15deg)",
+            width: { xs: "550px", sm: "300px", md: "520px" }, // Responsive width
           }}
         >
-          
+          <Box
+            sx={{
+              position: "relative",
+              background: "#fff",
+              borderRadius: "40px",
+              boxShadow: "0 10px 30px rgba(0,0,0,0.2)",
+              padding: "10px",
+              animation: "float1 6s ease-in-out infinite",
+            }}
+          >
+            <Box
+              sx={{
+                position: "absolute",
+                top: "12px",
+                left: "50%",
+                transform: "translateX(-50%)",
+                width: "35px",
+                height: "10px",
+                background: "#f5f5f5",
+                borderRadius: "1px",
+                zIndex: 10,
+              }}
+            />
             <img
-              src="https://images.unsplash.com/photo-1530521954074-e64f6810b32d?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-              alt="Phone"
+              src={screenone}
+              alt="Phone A"
               style={{
-                border: " 10px solid #ffffff",
-                boxShadow: "0 10px 30px rgba(0,0,0,0.4)",
                 width: "100%",
                 height: "auto",
+                maxWidth: "520px",
                 borderRadius: "32px",
                 display: "block",
                 objectFit: "contain",
-                transform: "rotate(-15deg) scale(1.1)", // Rotate and increase size
               }}
             />
+          </Box>
+        </Box>
+
+        {/* Right Phone */}
+        <Box
+          sx={{
+            position: "relative",
+            zIndex: 20,
+            transition: "opacity 1s ease-out, transform 1s ease-out",
+            opacity: isLoaded ? 1 : 0,
+            transform: isLoaded
+              ? "translateY(90px) rotate(8deg)"
+              : "translateY(30px) rotate(5deg)",
+            width: { xs: "550px", sm: "300px", md: "500px" }, // Responsive width
+          }}
+        >
+          <Box
+            sx={{
+              position: "relative",
+              background: "#fff",
+              borderRadius: "40px",
+              boxShadow: "0 10px 30px rgba(0,0,0,0.2)",
+              padding: "10px",
+              animation: "float2 6s ease-in-out infinite",
+            }}
+          >
+            <Box
+              sx={{
+                position: "absolute",
+                top: "12px",
+                left: "50%",
+                transform: "translateX(-10%)",
+                width: "35px",
+                height: "10px",
+                background: "#f5f5f5",
+                borderRadius: "1px",
+                zIndex: 20,
+              }}
+            />
+            <img
+              src={screentwo}
+              alt="Phone B"
+              style={{
+                width: "100%",
+                height: "auto",
+                maxWidth: "500px",
+                borderRadius: "30px",
+              }}
+            />
+          </Box>
         </Box>
       </Box>
-    );
-  };
 
-  export default CenteredPhone;
+      {/* Keyframes */}
+      <style>
+        {`
+          @keyframes float1 {
+            0%, 100% {
+              transform: translateY(0) rotate(0deg);
+            }
+            50% {
+              transform: translateY(-10px) rotate(0deg);
+            }
+          }
+          @keyframes float2 {
+            0%, 100% {
+              transform: translateY(0) rotate(5deg);
+            }
+            50% {
+              transform: translateY(-10px) rotate(5deg);
+            }
+          }
+          @keyframes movePink {
+            0%, 100% {
+              top: 20%;
+              left: 30%;
+            }
+            50% {
+              top: 35%;
+              left: 19%;
+            }
+          }
+          @keyframes moveOrange {
+            0%, 100% {
+              top: 50%;
+              right: 10%;
+            }
+            50% {
+              top: 35%;
+              right: 9%;
+            }
+          }
+        `}
+      </style>
+    </Box>
+  );
+};
 
+export default FloatingPhones;

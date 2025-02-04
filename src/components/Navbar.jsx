@@ -21,9 +21,7 @@ import Logo from "../assets/logo.png";
 const Hero = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
-  const menuItems = [
-    // "Home",
-  ];
+  const menuItems = ["",];
 
   const [elevated, setElevated] = useState(false);
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -61,7 +59,7 @@ const Hero = () => {
               <Box
                 component="img"
                 src={Logo}
-                alt="xBordr Logo"
+                alt="XBORDR Logo"
                 sx={{
                   height: { xs: 56, sm: 70, md: 93 },
                   width: { xs: 80, sm: 100, md: 137 },
@@ -75,15 +73,15 @@ const Hero = () => {
                 sx={{
                   fontWeight: 800,
                   fontSize: { xs: "1.5rem", sm: "2rem", md: "2.5rem" },
-                  color: "#000000",
-                  background: "#0077B3",
+                  color: "linear-gradient(90deg, #FF6B6B 0%, #FFD93D 100%)",
+                  background: "linear-gradient(90deg, #FF6B6B, #FFD93D)",
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent",
-                  // textTransform: "uppercase",
+                  textTransform: "uppercase",
                   letterSpacing: "0.1rem",
                 }}
               >
-                xBordr
+                XBORDR
               </Typography>
             </Box>
 
@@ -110,7 +108,7 @@ const Hero = () => {
                 ))}
 
                 {/* Download Button */}
-                <Button
+                {/* <Button
                   variant="contained"
                   endIcon={<Download size={20}/>} // Add this line for the download icon
                   sx={{
@@ -128,7 +126,7 @@ const Hero = () => {
                   }}
                 >
                   Download
-                </Button>
+                </Button> */}
               </Box>
             )}
 
@@ -181,7 +179,7 @@ const Hero = () => {
               </ListItem>
             ))}
           </List>
-          <Button
+          {/* <Button
             variant="contained"
             fullWidth
             sx={{
@@ -201,7 +199,7 @@ const Hero = () => {
             }}
           >
             Download
-          </Button>
+          </Button> */}
         </Box>
       </Drawer>
     </>
@@ -209,4 +207,3 @@ const Hero = () => {
 };
 
 export default Hero;
-
