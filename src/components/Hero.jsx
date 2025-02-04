@@ -3,8 +3,8 @@ import { Box, Button, Container, Typography } from "@mui/material"
 import Navbar from "./Navbar";
 import Features from "./Features";
 import Works from "./Works";
-import Price from "./price";
-import Reviews from "./Reviews";
+// import Price from "./price";
+// import Reviews from "./Reviews";
 import Footer from "./footer";
 import Mobiles from "./Mobiles";
 import Motivation from "./Motivation";
@@ -144,7 +144,7 @@ const HeroSection = () => {
     <Motivation/>
     <Goals/>
     <Works/>
-    <Price/>
+    {/* <Price/> */}
     <Reviews/>
     <Footer/>
     </>
