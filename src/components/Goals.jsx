@@ -248,3 +248,4 @@ const GoalsSection = () => {
 };
 
 export default GoalsSection;
+
