@@ -376,7 +376,6 @@ const GradientBackground = styled(Box)(({ animation }) => ({
 const StoreButton = styled(Link)(() => ({
   display: "inline-block",
   transition: "transform 0.2s ease-in-out",
-  textDecoration: "none",
   "&:hover": {
     transform: "scale(1.05)",
   },
@@ -482,8 +481,7 @@ const AppHero = () => {
             fontWeight: "normal",
           }}
         >
-          Join our waitlist and be the first to save money and time on your
-          tourism cross-border payments!
+          Available on the iOS App Store and Google Play Store
         </Typography>
 
         <Box sx={{ display: "flex", justifyContent: "center", mb: 6 }}>
@@ -508,25 +506,32 @@ const AppHero = () => {
               backgroundColor: "#ffffff",
               borderRadius: "50px",
             }}
+            href="#"
+            target="_blank"
+            rel="noopener"
           >
-            <a
-              href="https://forms.gle/Y9BF3W8auqinFF5b9"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{ textDecoration: "none" }}
-            >
-              <Typography
-                sx={{
-                  fontSize: "1rem",
-                  color: "#111213",
-                  fontWeight: 600,
-                  letterSpacing: "-0.02em",
-                  textDecoration: "none",
-                }}
-              >
-                Join our waitlist…
-              </Typography>
-            </a>
+            <img
+              src="https://cdn.prod.website-files.com/62da6b5f754c761cc1b0de4b/62e02d6793b8ed9dffe43460_App%20Store.svg"
+              alt="Download on the App Store"
+            />
+          </StoreButton>
+          <StoreButton
+            sx={{
+              pt: 2,
+              pr: 5,
+              pl: 5,
+              pb: 1.5,
+              backgroundColor: "#ffffff",
+              borderRadius: "50px",
+            }}
+            href="#"
+            target="_blank"
+            rel="noopener"
+          >
+            <img
+              src="https://cdn.prod.website-files.com/62da6b5f754c761cc1b0de4b/62e02d6615cfc41079ebc5a4_Google%20Play.svg"
+              alt="Get it on Google Play"
+            />
           </StoreButton>
         </Box>
       </Container>
